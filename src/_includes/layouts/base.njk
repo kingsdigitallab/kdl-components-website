@@ -1,0 +1,19 @@
+{% extends "kdl/base.njk" %}
+
+{% set baseUrl = config.baseUrl | url %}
+{% set assetsPath = config.paths.assets | url %}
+{% set imagesPath = config.paths.images | url %}
+{% set stylesheetsPath = config.paths.stylesheets | url %}
+
+{% block headMeta %}
+  {% seo "" %}
+{% endblock headMeta %}
+
+{% block headerStart %}
+  {{ headerMacro(config) }}
+{% endblock headerStart %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+{% endblock content %}
